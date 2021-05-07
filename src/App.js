@@ -1,14 +1,10 @@
-import React from 'react';
-import Header from "./header";
-import MainContent from "./mainContent";
-import Footer from "./footer";
+import React, {useState} from 'react';
+import Heroes from "./Heroes";
+
 function App(props) {
+
     return (
-        <div className='app'>
-            <Header/>
-            <MainContent/>
-            <Footer/>
-        </div>
+      <Heroes/>
     );
 }
 
