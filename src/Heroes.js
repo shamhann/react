@@ -11,9 +11,22 @@ function Heroes(props) {
             "Ирен Адлер"
         ]
     )
-    const newNames = names.map(function (item,index){
-        return <li key={index}>{item}</li>
+
+
+    const handleDelete = (it) => {
+        const filtered = newNames.filter(function(item,index){
+            if(it === index){
+                return false
+            }
+        return true
     })
+        setNames(filtered)
+    }
+
+    const newNames = names.map(function (item,index){
+        return <li key={index} onClick={(() => {handleDelete(index)} ) }>{item}</li>
+    })
+
 
 
     return (
