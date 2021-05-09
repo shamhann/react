@@ -13,9 +13,9 @@ function Heroes(props) {
     )
 
 
-    const handleDelete = (it) => {
+    const handleDelete = (ind) => {
         const filtered = newNames.filter(function(item,index){
-            if(it === index){
+            if(ind === index){
                 return false
             }
         return true
