@@ -1,0 +1,24 @@
+
+.section {
+    background-color: brown;
+}
+h1{
+    color: brown;
+}
+.item {
+    width: 1440px;
+    display: flex;
+
+}
+.itemName{
+    width: 210px;
+    color: #E5E5E5;
+}
+.itemUser{
+
+    width: 200px;
+color: #E5E5E5;
+}
+li{
+    list-style-type: none;
+}
