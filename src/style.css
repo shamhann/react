@@ -1,24 +1,36 @@
+*{
+    text-decoration: none;
+}
+.basis{
+    width: 900px;
+    margin: auto;
+    background-color: whitesmoke;
+}
 
-.section {
-    background-color: brown;
+.header{
+    border-bottom: 1px solid whitesmoke;
+    font-size: 2em;
+    text-align: center;
+    padding: 10px 0;
 }
-h1{
-    color: brown;
-}
-.item {
-    width: 1440px;
+.todo{
+    padding: 20px 10px;
+    font-size: 20px;
+    border-bottom: 1px solid whitesmoke;
     display: flex;
-
+    justify-content: space-between;
 }
-.itemName{
-    width: 210px;
-    color: #E5E5E5;
+.button{
+    padding: 8px;
+    color: red;
+    background-color: white;
+    font-size: 15px;
+    border: 0;
 }
-.itemUser{
-
-    width: 200px;
-color: #E5E5E5;
-}
-li{
-    list-style-type: none;
+.img{
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: dimgrey;
+    color: whitesmoke;
+    padding: 10px;
 }
