@@ -7,7 +7,8 @@ import './style.css'
 
 const initialState = {
         todos: [],
-        loading: false
+        loading: false,
+        deleted: false
     }
 ;
 const reducer = (state = initialState, action) => {
@@ -27,6 +28,19 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 todos: state.todos.filter((todo) =>  todo.id !== action.payload)
+            }
+        case 'check':
+            return {
+                ...state,
+                todos: state.todos.map((todo) => {
+                    if (todo.id === action.payload) {
+                        return {
+                            ...todo,
+                            deleted: !todo.deleted
+                        }
+                    }
+                    return todo;
+                })
             }
         default:
             return state;

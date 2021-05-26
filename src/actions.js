@@ -27,3 +27,22 @@ export const removeTodo = (id) => {
             })
     }
 }
+
+export const checkTodo = (id,deleted) => {
+    return(dispatch) => {
+        fetch(`https://jsonplaceholder.typicode.com/photos/?_limit=20/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({deleted: !deleted}),
+            headers:{
+                "Content-type": "application/json"
+            }
+        })
+            .then((response) => response.json())
+            .then(() => {
+                dispatch({
+                    type: 'check',
+                    payload: id
+                })
+            })
+    }
+}
