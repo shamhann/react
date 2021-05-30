@@ -6,7 +6,22 @@
     margin: auto;
     background-color: whitesmoke;
 }
+.load{
+    width: 350px;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+
+}
+.load-text{
+    font-size: 40px;
+    font-weight: bold;
+    color: darkslategrey;
+    text-align: center;
+}
 .header{
     border-bottom: 1px solid whitesmoke;
     font-size: 2em;
@@ -22,7 +37,6 @@
 }
 .button{
     padding: 8px;
-    color: red;
     background-color: white;
     font-size: 15px;
     border: 0;
@@ -33,4 +47,7 @@
     background-color: dimgrey;
     color: whitesmoke;
     padding: 10px;
+}
+.spinner{
+    margin: 2px;
 }

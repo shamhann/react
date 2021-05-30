@@ -1,12 +1,12 @@
 
 export const LoadTodos = () => {
     return (dispatch) => {
-        dispatch({type: 'start'})
-        fetch('https://jsonplaceholder.typicode.com/photos/?_limit=20')
+        dispatch({type: 'todo/load/start'})
+        fetch('https://jsonplaceholder.typicode.com/todos')
             .then(response => response.json())
             .then(json => {
                 dispatch({
-                    type: 'load',
+                    type: 'todo/load/success',
                     payload: json
                 })
             })
@@ -15,13 +15,14 @@ export const LoadTodos = () => {
 
 export const removeTodo = (id) => {
     return(dispatch) => {
-        fetch(`https://jsonplaceholder.typicode.com/photos/?_limit=20/${id}`,{
+        dispatch({type: 'todo/deleting/start',payload: id})
+        fetch(`https://jsonplaceholder.typicode.com/todos/${id}`,{
             method: 'DELETE'
         })
             .then((response) => response.json())
             .then((json) => {
                 dispatch({
-                    type: 'delete',
+                    type: 'todo/deleting/success',
                     payload: id
                 })
             })
@@ -30,7 +31,8 @@ export const removeTodo = (id) => {
 
 export const checkTodo = (id,deleted) => {
     return(dispatch) => {
-        fetch(`https://jsonplaceholder.typicode.com/photos/?_limit=20/${id}`, {
+        dispatch({type: 'todo/checking/start',payload: id})
+        fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
             method: 'PATCH',
             body: JSON.stringify({deleted: !deleted}),
             headers:{
@@ -40,8 +42,23 @@ export const checkTodo = (id,deleted) => {
             .then((response) => response.json())
             .then(() => {
                 dispatch({
-                    type: 'check',
+                    type: 'todo/checking/success',
                     payload: id
+                })
+            })
+    }
+}
+
+export const loadUsers = () => {
+    return (dispatch) => {
+        dispatch({type: "users/load/start"})
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((json) => {
+                dispatch({
+                    type: 'users/load/success',
+                    payload: json
                 })
             })
     }
